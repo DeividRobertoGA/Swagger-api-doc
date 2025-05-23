@@ -8,8 +8,8 @@ const SECRET_KEY = process.env.TOKEN_KEY;
 
 //Criando um Token
 const createJWT = (user_id) => {
-    const token = jwt.sign(user_id, SECRET_KEY, {
-        expiresIn: "1d"
+    const token = jwt.sign({user_id}, SECRET_KEY, {
+        expiresIn: '1d'
     });
 
     return token;

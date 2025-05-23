@@ -7,6 +7,9 @@ import dotenv from 'dotenv';
 //Importando os Verificações
 import { db } from "./src/Config/database.config.js"
 
+//Importando as Rotas
+import UserRoute from "./src/Routes/user.route.js";
+
 //Configurações
 dotenv.config({ path: "./config.env" });
 const PORT = process.env.PORT || 3000;
@@ -20,6 +23,7 @@ app.use(cors());
 app.get('/ping', (req, res) => {res.send("Ping")});
 
 //Rotas Externas
+app.use(UserRoute);
 
 //Iniciando o Servidor
 app.listen(PORT, () => {
