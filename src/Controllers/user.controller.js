@@ -29,7 +29,7 @@ const register = (req, res) => {
 
     Model.register(dados, (err, result) => {
         if (err) {
-            return res.status(400).send({errors: err});
+            return res.status(500).send({errors: err});
         } else {
             return res.status(201).send({message: "Usuário cadastrado com sucesso"});
         }
@@ -44,7 +44,7 @@ const recoverPassword = (req, res) => {
 
     Model.recoverPassword(dados, (err, result) => {
         if (err) {
-            return res.status(400).send({errors: err});
+            return res.status(500).send({errors: err});
         } else {
             return res.status(200).send({message: "Senha alterada com sucesso"});
         }
