@@ -22,7 +22,7 @@ Para iniciar o **Swagger API Documentation**, siga os passos abaixo:
 
 1. Execute o servidor:
    ```bash
-   npm start
+   npm run start
    ```
 3. Acesse o painel no navegador:
    ```
