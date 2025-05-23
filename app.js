@@ -9,6 +9,7 @@ import { db } from "./src/Config/database.config.js"
 
 //Importando as Rotas
 import UserRoute from "./src/Routes/user.route.js";
+import ProductRoute from "./src/Routes/product.route.js";
 
 //Configurações
 dotenv.config({ path: "./config.env" });
@@ -24,6 +25,7 @@ app.get('/ping', (req, res) => {res.send("Ping")});
 
 //Rotas Externas
 app.use(UserRoute);
+app.use(ProductRoute);
 
 //Iniciando o Servidor
 app.listen(PORT, () => {
