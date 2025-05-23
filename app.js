@@ -5,6 +5,7 @@ import colors from 'colors';
 import dotenv from 'dotenv';
 
 //Importando os Verificações
+import { db } from "./src/Config/database.config.js"
 
 //Configurações
 dotenv.config({ path: "./config.env" });
@@ -27,4 +28,14 @@ app.listen(PORT, () => {
     setTimeout(() => {
         console.log(`Servidor iniciado na porta: ${PORT}`.blue)
     }, 5000)
+
+    setTimeout(() => {
+        db.getConnection((err, connection) => {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("Conexão com o banco de dados: OK".green);
+            }
+        })
+    }, 7000)
 })
