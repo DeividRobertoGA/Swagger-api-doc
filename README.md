@@ -14,7 +14,9 @@ Antes de instalar o **NV.Panel**, certifique-se de ter:
    ```bash
    npm install
    ```
-3. Faça as configurações necessarias no arquivo `config.env`.
+3. Crie o banco de dados apartir do arquivo `database.sql`
+
+4. Faça as configurações necessarias no arquivo `config.env`.
 
 ## Como rodar
 
@@ -24,7 +26,8 @@ Para iniciar o **Swagger API Documentation**, siga os passos abaixo:
    ```bash
    npm run start
    ```
-3. Acesse o painel no navegador:
+2. Acesse o painel no navegador:
    ```
-   http://localhost:3000/
+   http://127.0.0.1:PORT/
    ```
+   Troque `PORT` pela porta configurada ou use a porta padrão **3000**
