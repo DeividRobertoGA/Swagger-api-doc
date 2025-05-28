@@ -17,7 +17,7 @@ const createProduct = (req, res) => {
 };
 
 const readProduct = (req, res) => {
-    Model.readProduct(req.params.productId, (err, result) => {
+    Model.readProduct(req.params.id, (err, result) => {
         if (err) {
             return res.status(500).send({errors: err});
         } else {

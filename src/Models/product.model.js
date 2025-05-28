@@ -11,7 +11,7 @@ const createProduct = (dados, callback) => {
 };
 
 const readProduct = (id, callback) => {
-    db.query("SELECT * from products", [id], (err, result) => {
+    db.query("SELECT * from products WHERE id=?", [id], (err, result) => {
         if (err) {
             return callback(err, null);
         } else {
