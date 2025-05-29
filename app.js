@@ -3,6 +3,8 @@ import express from 'express';
 import cors from 'cors';
 import colors from 'colors';
 import dotenv from 'dotenv';
+import swaggerUi from "swagger-ui-express";
+import swaggerDocs from "./src/Config/swagger.json" with { type: "json" };
 
 //Importando os Verificações
 import { db } from "./src/Config/database.config.js"
@@ -15,6 +17,7 @@ import ProductRoute from "./src/Routes/product.route.js";
 dotenv.config({ path: "./config.env" });
 const PORT = process.env.PORT || 3000;
 const app = express();
+swaggerDocs.servers[0].url = process.env.BACKEND_URL || `http://localhost:${PORT}`;
 
 //Configurar os Middlewares
 app.use(express.json());
@@ -22,6 +25,7 @@ app.use(cors());
 
 //Rotas Internas
 app.get('/ping', (req, res) => {res.send("Ping")});
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 
 //Rotas Externas
 app.use(UserRoute);
