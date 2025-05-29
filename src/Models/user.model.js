@@ -1,8 +1,8 @@
 import { db } from '../Config/database.config.js';
 import bcrypt from "bcrypt";
 
-const login = (mail, callback) => {
-    db.query("SELECT id, name, mail, password FROM users WHERE mail=?", [mail], (err, result) => {
+const login = (email, callback) => {
+    db.query("SELECT id, name, email, password FROM users WHERE email=?", [email], (err, result) => {
         if (err) {
             callback(err, null);
         } else {
@@ -14,7 +14,7 @@ const login = (mail, callback) => {
 const register = async (dados, callback) => {
     const cryptPassword = await bcrypt.hash(dados.password, 10);
 
-    db.query("INSERT INTO users (name, mail, password) VALUES (?, ?, ?)", [dados.name, dados.mail, cryptPassword], (err, result) => {
+    db.query("INSERT INTO users (name, email, password) VALUES (?, ?, ?)", [dados.name, dados.email, cryptPassword], (err, result) => {
         if (err) {
             return callback(err, null);
         } else {
@@ -26,7 +26,7 @@ const register = async (dados, callback) => {
 const recoverPassword = async (dados,callback) => {
     const cryptPassword = await bcrypt.hash(dados.password, 10);
 
-    db.query("UPDATE users SET password=? WHERE mail=?", [cryptPassword, dados.mail], (err, result) => {
+    db.query("UPDATE users SET password=? WHERE email=?", [cryptPassword, dados.email], (err, result) => {
         if (err) {
             return callback(err, null);
         } else {

@@ -3,13 +3,13 @@ import { db, executeQuery } from "../Config/database.config.js";
 const login = async (req, res, next) => {
     let errors = [];
 
-    !req.body.mail && errors.push("E-Mail não informado");
+    !req.body.email && errors.push("E-Mail não informado");
     !req.body.password && errors.push("Senha não informada");
 
-    if (req.body.mail) {
-        let mailExists = await executeQuery(db, "SELECT mail FROM users WHERE mail = ? ", [req.body.mail]);
+    if (req.body.email) {
+        let emailExists = await executeQuery(db, "SELECT email FROM users WHERE email = ? ", [req.body.email]);
 
-        mailExists.length < 1 && errors.push("E-mail e/ou Senha incorretos");
+        emailExists.length < 1 && errors.push("E-email e/ou Senha incorretos");
     }
 
     if (errors.length > 0) {
@@ -23,13 +23,13 @@ const register = async (req, res, next) => {
     let errors = [];
 
     !req.body.name && errors.push("Nome não informado");
-    !req.body.mail && errors.push("E-Mail não informado");
+    !req.body.email && errors.push("E-Mail não informado");
     !req.body.password && errors.push("Senha não informada");
 
-    if (req.body.mail) {
-        let mailExists = await executeQuery(db, "SELECT mail FROM users WHERE mail = ? ", [req.body.mail]);
+    if (req.body.email) {
+        let emailExists = await executeQuery(db, "SELECT email FROM users WHERE email = ? ", [req.body.email]);
 
-        mailExists.length > 0 && errors.push("Usuário já existe");
+        emailExists.length > 0 && errors.push("Usuário já existe");
     }
 
     if (errors.length > 0) {
@@ -43,13 +43,13 @@ const register = async (req, res, next) => {
 const recoverPassword = async (req, res, next) => {
     let errors = [];
 
-    !req.body.mail && errors.push("E-Mail não informado");
+    !req.body.email && errors.push("E-Mail não informado");
     !req.body.password && errors.push("Senha não informada");
 
-    if (req.body.mail) {
-        let mailExists = await executeQuery(db, "SELECT mail FROM users WHERE mail = ? ", [req.body.mail]);
+    if (req.body.email) {
+        let emailExists = await executeQuery(db, "SELECT email FROM users WHERE email = ? ", [req.body.email]);
 
-        mailExists.length < 1 && errors.push("E-mail não existe");
+        emailExists.length < 1 && errors.push("E-Mail não existe");
     }
 
     if (errors.length > 0) {

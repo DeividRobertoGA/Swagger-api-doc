@@ -3,7 +3,7 @@ import { createJWT } from "../Config/token.config.js";
 import bcrypt from "bcrypt";
 
 const login = (req, res) => {
-    Model.login(req.body.mail, async (err, result) => {
+    Model.login(req.body.email, async (err, result) => {
         if (err) {
             res.status(500).send({errors: err});
         } else {
@@ -14,7 +14,7 @@ const login = (req, res) => {
 
                 res.status(200).send(response);
             } else {
-                res.status(401).send({errors: "E-mail e/ou Senha incorretos"});
+                res.status(401).send({errors: "E-email e/ou Senha incorretos"});
             }
         }
     })
@@ -23,7 +23,7 @@ const login = (req, res) => {
 const register = (req, res) => {
     const dados = {
         name: req.body.name,
-        mail: req.body.mail,
+        email: req.body.email,
         password: req.body.password,
     }
 
@@ -38,7 +38,7 @@ const register = (req, res) => {
 
 const recoverPassword = (req, res) => {
     const dados = {
-        mail: req.body.mail,
+        email: req.body.email,
         password: req.body.password,
     }
 

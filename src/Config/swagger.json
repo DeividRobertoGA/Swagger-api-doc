@@ -30,7 +30,7 @@
                   "name": {
                     "type": "string"
                   },
-                  "mail": {
+                  "email": {
                     "type": "string"
                   },
                   "password": {
@@ -42,7 +42,7 @@
                 "User": {
                   "value": {
                     "name": "User",
-                    "mail": "user@gmail.com",
+                    "email": "user@gmail.com",
                     "password": "123456"
                   }
                 }
@@ -97,7 +97,7 @@
             "application/json": {
               "schema": {
                 "properties": {
-                  "mail": {
+                  "email": {
                     "type": "string"
                   },
                   "password": {
@@ -108,7 +108,7 @@
               "examples": {
                 "User": {
                   "value": {
-                    "mail": "user@gmail.com",
+                    "email": "user@gmail.com",
                     "password": "123456"
                   }
                 }
@@ -130,7 +130,7 @@
                     "name": {
                       "type": "string"
                     },
-                    "mail": {
+                    "email": {
                       "type": "string"
                     },
                     "token": {
@@ -150,7 +150,7 @@
                   "properties": {
                     "errors": {
                       "type": "string",
-                      "example": "E-mail e/ou Senha incorretos"
+                      "example": "E-email e/ou Senha incorretos"
                     }
                   }
                 }
@@ -187,7 +187,7 @@
             "application/json": {
               "schema": {
                 "properties": {
-                  "mail": {
+                  "email": {
                     "type": "string"
                   },
                   "password": {
@@ -198,7 +198,7 @@
               "examples": {
                 "User": {
                   "value": {
-                    "mail": "user@gmail.com",
+                    "email": "user@gmail.com",
                     "password": "12345678"
                   }
                 }
