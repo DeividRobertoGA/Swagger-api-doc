@@ -6,7 +6,12 @@
   },
   "servers": [
     {
-      "url": ""
+      "url": "http://localhost",
+      "description": "Local API"
+    },
+    {
+      "url": "",
+      "description": "Production API"
     }
   ],
   "paths": {
