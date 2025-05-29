@@ -26,8 +26,4 @@ Para iniciar o **Swagger API Documentation**, siga os passos abaixo:
    ```bash
    npm run start
    ```
-2. Acesse o painel no navegador:
-   ```
-   http://127.0.0.1:PORT/
-   ```
-   Troque `PORT` pela porta configurada ou use a porta padrão **3000**
+2. Acesse o swagger no navegador pela URL que apareceu no terminal
