@@ -1,5 +1,5 @@
 -- --------------------------------------------------------
--- Servidor:                     127.0.0.1
+-- Servidor:                     192.168.99.18
 -- Versão do servidor:           10.4.32-MariaDB - mariadb.org binary distribution
 -- OS do Servidor:               Win64
 -- HeidiSQL Versão:              12.10.0.7000
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `products` (
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(60) NOT NULL,
-  `mail` varchar(200) NOT NULL,
+  `email` varchar(200) NOT NULL,
   `password` longtext NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
