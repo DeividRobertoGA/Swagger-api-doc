@@ -1,5 +1,5 @@
 # Swagger API Documentation
-Antes de instalar o **NV.Panel**, certifique-se de ter:
+Antes de instalar o **Swagger API Documentation**, certifique-se de ter:
 
 - **Dependências:** Node.js 22+
 
